@@ -2,34 +2,51 @@ books = [{
         'title': 'Javascript for Dummies',
         'author': 'Dummy Dumb Dumb',
         'read': 'false',
-        'cover': '../../../../../Downloads/javascript.jpg'
+        'cover': 'images/javascript.jpg'
     },
     {
         'title': 'effective Java',
         'author': 'Joshua Bloch',
         'read': 'false',
-        'cover': '../../../../../Downloads/code.jpg'
+        'cover': 'images/code.jpg'
     },
     {
         'title': 'taocp',
         'author': 'donald knuth',
         'read': 'false',
-        'cover': '../../../../../Downloads/Knuth.png',
+        'cover': 'images/Knuth.png',
         'img_license': 'By Alex Handy - Flickr: DSC_0098, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=74833832'
     },
     {
         'title': 'Jerry Cotton: I Sought the Gang Boss',
         'author': 'Heinz Höber',
         'read': 'true',
-        'cover': '../../../../../Downloads/agent.jpg',
+        'cover': 'images/agent.jpg',
         'img_license': 'Image by <a href="https://pixabay.com/users/10634669-10634669/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4134645">Sam Williams</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4134645">Pixabay</a>'
     }
 ];
 
 console.log(books);
+// save to file
+const fs = require('fs');
+
+// First I want to read the file
+fs.readFile('./Index.html', function read(err, data) {
+    if (err) {
+        throw err;
+    }
+    const content = data;
+
+    // Invoke the next step here however you like
+    console.log(content); // Put all of the code here (not the best solution)
+    processFile(content); // Or put the next step in a function and invoke it
+});
 localStorage.setItem('books', JSON.stringify(books));
 
 books = JSON.parse(localStorage.getItem('books'));
+
+
+
 
 container = document.querySelector("container");
 console.log(books);
