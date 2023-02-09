@@ -1,0 +1,18 @@
+container {
+    padding: 30px;
+}
+
+h1 {
+    color: blue;
+}
+
+.crop-container {
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.crop-container img {
+    margin-top: -100px;
+    margin-left: -200px;
+}
